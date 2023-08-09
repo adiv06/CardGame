@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08DC5162-E775-44F6-8980-48B930823429}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CardGame</RootNamespace>
+    <AssemblyName>CardGame</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HoldemCard.cs" />
+    <Compile Include="HoldemCardBoard.cs" />
+    <Compile Include="HoldembettingSystem.cs" />
+    <Compile Include="HoldemDeck.cs" />
+    <Compile Include="HoldemElevens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoldemElevens.Designer.cs">
+      <DependentUpon>HoldemElevens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Holdem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holdem.Designer.cs">
+      <DependentUpon>Holdem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoldemRunner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HoldemElevens.aa.resx">
+      <DependentUpon>HoldemElevens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoldemElevens.resx">
+      <DependentUpon>HoldemElevens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Holdem.resx">
+      <DependentUpon>Holdem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\2spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\3spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\4spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\5spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\6spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\7spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\8spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\9spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10clubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10clubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10diamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10diamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10hearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10heartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10spades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\10spadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\aceclubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\aceclubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\acediamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\acediamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\acehearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\aceheartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\acespades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\acespadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\back1.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\blank.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackclubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackclubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackdiamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackdiamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackhearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackheartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackspades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\jackspadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\JO.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\JOS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingclubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingclubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingdiamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingdiamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kinghearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingheartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingspades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\kingspadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queenclubs.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queenclubsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queendiamonds.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queendiamondsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queenhearts.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queenheartsS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queenspades.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My_Resources\queenspadesS.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Win_Sound.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
